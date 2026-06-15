@@ -1,0 +1,19 @@
+services:
+  ip-dns-resolver:
+    image: node:24-alpine
+    container_name: ip-dns-resolver
+    working_dir: /app
+    init: true
+    restart: unless-stopped
+    ports:
+      - 3001:3000
+    environment:
+      NODE_ENV: production
+      # Aus der .env-Datei geladen (siehe .env.example). NICHT hier hardcoden.
+      RESOLVER_PASSWORD: ${RESOLVER_PASSWORD:?RESOLVER_PASSWORD muss in .env gesetzt sein}
+      GEOIP_MMDB_PATH: /app/data/GeoLite2-City.mmdb
+      GEOIP_ASN_MMDB_PATH: /app/data/GeoLite2-ASN.mmdb
+    volumes:
+      - /docker/nextjs/ip-dns-resolver:/app
+    command: sh -c "npm install --omit=dev && npm start"
+networks: {}

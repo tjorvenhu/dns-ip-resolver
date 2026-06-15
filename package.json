@@ -1,0 +1,20 @@
+{
+  "name": "ip-inspector",
+  "version": "1.0.0",
+  "description": "Cleanes IP- und Domain-Analyse-Tool mit GeoIP und Portscan",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "node scripts/setup-mmdb.js"
+  },
+  "dependencies": {
+    "@ip-location-db/geolite2-asn-mmdb": "2.3.2026021119",
+    "@ip-location-db/geolite2-city-mmdb": "2.3.2026021119",
+    "@maxmind/geoip2-node": "6.1.0",
+    "country-to-currency": "1.1.5",
+    "express": "4.22.1",
+    "geoip-lite": "1.4.10",
+    "maxmind": "4.3.0",
+    "whois": "2.16.1"
+  }
+}

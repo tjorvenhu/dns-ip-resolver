@@ -1,0 +1,18 @@
+# Dependencies (werden per `npm install` erzeugt)
+node_modules/
+
+# Laufzeit-/Konfigurationsdaten
+data/site-config.enc
+data/images/
+data/*.mmdb
+
+# Gespeicherte Scan-History
+public/history/*.json
+
+# Umgebungsvariablen / Secrets
+.env
+
+# Logs & OS-Artefakte
+*.log
+.DS_Store
+Thumbs.db
